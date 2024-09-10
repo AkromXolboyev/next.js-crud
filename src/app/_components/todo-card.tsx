@@ -9,7 +9,7 @@ export const TodoCard: React.FC<dataType> = ({ description, id, title }) => {
   const deleteTodo = async () => {
     startTransition(async () => {
       try {
-        await deleteItem(id); 
+        await deleteItem(id);
       } catch (error) {
         console.error("Failed to delete the item:", error);
       }
@@ -17,10 +17,12 @@ export const TodoCard: React.FC<dataType> = ({ description, id, title }) => {
   };
 
   return (
-    <div className="border border-black p-4">
-      <h1 className="text-3xl">{title}</h1>
-      <p>{description}</p>
-      <button onClick={deleteTodo} disabled={loading}>
+    <div className="border border-black p-4 flex justify-between">
+      <div>
+        <h1 className="text-3xl ">{title}</h1>
+        <p className="">{description}</p>
+      </div>
+      <button className="p-2 w-[100px] bg-green-400" onClick={deleteTodo} disabled={loading}>
         {loading ? "loading..." : "delete"}
       </button>
     </div>

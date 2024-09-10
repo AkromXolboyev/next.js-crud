@@ -44,7 +44,7 @@ export default async function Home() {
           <TodoCard key={item.id} {...item} />
         ))
       ) : (
-        <p className="text-center">No todos available</p> 
+        <p className="text-center">No todos </p> 
       )}
     </div>
   );

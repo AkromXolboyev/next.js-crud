@@ -19,7 +19,7 @@ export const TodoForm = () => {
   const onSubmit = (data: dataType) => {
     startTransition(async () => {
       try {
-        await createTodo(data); // Await for async operation
+        await createTodo(data); 
       } catch (error) {
         console.error("Failed to create todo:", error);
       }
@@ -28,13 +28,13 @@ export const TodoForm = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
+      <form className="" onSubmit={handleSubmit(onSubmit)}>
+        <div className="bg-slate-200 w-[300px] text-center h-[300px] mx-auto p-5 mb-[50px]">
           {/* Title Field */}
           <div className="pb-4">
             <input
-              className="border border-black bg-green-200"
-              {...register("title", { required: "Title is required" })} // Validation rule
+              className="border border-black bg-green-200 p-3"
+              {...register("title", { required: "Title is required" })} 
               type="text"
               placeholder="Title"
             />
@@ -47,7 +47,7 @@ export const TodoForm = () => {
           {/* Description Field */}
           <div className="pb-4">
             <input
-              className="border border-black bg-green-200"
+              className="border border-black bg-green-200 p-3"
               {...register("description", {
                 required: "Description is required",
               })} // Validation rule
@@ -62,9 +62,9 @@ export const TodoForm = () => {
 
           {/* Submit Button */}
           <button
-            className="border-black border p-2 bg-yellow-300"
+            className="border-black border p-2 bg-yellow-300 mt-10"
             type="submit"
-            disabled={loading} // Disable button when loading
+            disabled={loading} 
           >
             {loading ? "loading..." : "Submit"}
           </button>
