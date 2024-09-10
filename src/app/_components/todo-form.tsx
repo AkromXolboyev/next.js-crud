@@ -13,9 +13,9 @@ export const TodoForm = () => {
     register,
     formState: { errors },
   } = useForm<dataType>();
-  const [loading, setTransition] = React.useTransition();
+  const [loading, startTransition] = React.useTransition();
   const onSubmit = (data: dataType) => {
-    setTransition(() => {
+    startTransition(() => {
       createTodo(data);
     });
   };

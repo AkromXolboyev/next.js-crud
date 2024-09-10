@@ -3,9 +3,9 @@ import React from "react";
 import { dataType } from "@/service/query/get-todos";
 import { deleteItem } from "@/service/mutation/delete-item";
 export const TodoCard: React.FC<dataType> = ({ description, id, title }) => {
-  const [loading, setTransition] = React.useTransition();
+  const [loading, startTransition] = React.useTransition();
   const deleteTodo = () => {
-    setTransition(() => {
+    startTransition(() => {
       deleteItem(id);
     });
   };

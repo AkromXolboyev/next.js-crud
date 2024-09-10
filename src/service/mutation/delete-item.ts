@@ -22,7 +22,7 @@ export const createTodo = async (dataForm: dataType) => {
     const res = await fetch(`${url}/todos`, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json", // JSON formatida yuborish
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(dataForm),
     });
